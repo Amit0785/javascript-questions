@@ -1202,9 +1202,15 @@ function throttle(fn, delay) {
 
 128. What is event bubbling?
 
+Event bubbling is the process where an event starts at the target element and then propagates upward through its parent elements.
+
 129. What is event capturing?
 
+Event capturing is the phase where an event travels from the outermost element down to the target element.
+
 130. What is event delegation?
+
+Event delegation is a technique where we attach one event listener to a parent element instead of adding separate listeners to each child.
 
 131. Why is event delegation useful?
 
@@ -1261,9 +1267,17 @@ This is a good architect-level topic.
 
 138. How does JavaScript manage memory?
 
+JavaScript manages memory automatically using a Garbage Collector (GC).
+
 139. What is garbage collection?
 
+Garbage collection (GC) is JavaScript's automatic process of finding objects that are no longer reachable and freeing the memory they occupy.
+
 140. What is a memory leak?
+
+A memory leak occurs when a program keeps references to objects that it no longer needs, preventing the garbage collector from reclaiming that memory.
+
+As memory usage continues to grow, the application can become slow or eventually crash.
 
 141. Common causes of memory leaks?
 

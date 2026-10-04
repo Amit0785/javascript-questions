@@ -781,6 +781,34 @@ Expected:
 
 76. Implement `groupBy()`.
 
+```js
+
+const users = [
+  { name: "John", role: "admin" },
+  { name: "Amit", role: "user" },
+  { name: "Rahul", role: "admin" },
+  { name: "Priya", role: "user" }
+];
+
+function groupBy(array, key) {
+  return array.reduce((result, item) => {
+    const group = item[key];
+
+    if (!result[group]) {
+      result[group] = [];
+    }
+
+    result[group].push(item);
+
+    return result;
+  }, {});
+}
+
+const groupedUsers = groupBy(users, "role");
+
+console.log(groupedUsers);
+```
+
 ---
 
 # 10. Functions — Deep

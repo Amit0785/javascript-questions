@@ -363,9 +363,30 @@ fn1();
 
 19. What are practical uses of closures?
 
+Closures are practically used for data privacy, maintaining state, creating function factories, callbacks/event handlers, and implementing utilities such as debounce and throttle. In React/React Native, closures are also commonly encountered in event handlers and hooks.
+
+Easy way to remember:
+Closures → Privacy + State + Callbacks + Factories + Debounce/Throttle
+
+function debounce(fn, delay) {
+  let timer;
+
+  return function (...args) {
+    clearTimeout(timer);
+
+    timer = setTimeout(() => {
+      fn(...args);
+    }, delay);
+  };
+}
+
 20. Can closures cause memory leaks?
 
+Yes, closures can contribute to memory leaks if a long-lived closure retains references to large objects or resources that are no longer needed. The garbage collector cannot free those objects while they are still reachable through the closure. Proper cleanup of listeners, timers, subscriptions, and other resources prevents this
+
 21. How would you prevent unnecessary memory retention caused by closures?
+
+I prevent unnecessary memory retention by keeping closures short-lived, avoiding capturing large objects unnecessarily, and cleaning up resources such as event listeners, timers, subscriptions, and WebSockets. In React Native, I use useEffect cleanup functions to ensure closures and their associated resources are released when the component unmounts or dependencies change.
 
 ---
 

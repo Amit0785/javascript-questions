@@ -576,18 +576,19 @@ Object.prototype
 
 ```js
 Object.prototype
+```
 
 Object.prototype is the top-level prototype object from which most ordinary JavaScript objects inherit properties and methods.
-```
+
 
 45. Difference between:
 
 ```js
 __proto__
 prototype
-
-prototype is a property of constructor functions/classes that defines the prototype inherited by their instances. __proto__ is an accessor on objects that exposes their internal prototype ([[Prototype]])
 ```
+prototype is a property of constructor functions/classes that defines the prototype inherited by their instances. __proto__ is an accessor on objects that exposes their internal prototype ([[Prototype]])
+
 
 46. Explain:
 

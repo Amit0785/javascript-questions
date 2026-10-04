@@ -632,6 +632,8 @@ ES6 classes are syntactic sugar over JavaScript's prototype-based inheritance. W
 
 51. What is the difference between primitive and reference types?
 
+Primitive values are copied by value, so changing one variable doesn't affect another. Objects, arrays, and functions are objects whose reference value is copied, so two variables can refer to the same object. JavaScript is technically pass-by-value in both cases.
+
 52. Explain:
 
 ```js
@@ -654,13 +656,9 @@ b.value = 20;
 console.log(a.value);
 ```
 
-53. Why does:
+53. Why does {} === {} return `false`?
 
-```js
-{} === {}
-```
-
-return `false`?
+{} === {} returns false because each object literal creates a new object. Strict equality compares objects by reference identity, not by their contents. Two separate objects are therefore not equal, even if they contain exactly the same data.
 
 54. Explain shallow copy.
 

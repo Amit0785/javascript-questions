@@ -1073,6 +1073,8 @@ Because an async function always returns a Promise, even when you return a norma
 
 113. What does an `async` function always return?
 
+An async function always returns a Promise. A returned value becomes a fulfilled Promise, and a thrown error becomes a rejected Promise.
+
 114. Difference between:
 
 ```js
@@ -1120,6 +1122,8 @@ throw
 try/catch
 Promise rejection
 ```
+
+throw raises an error, try/catch handles errors, and Promise rejection represents failure in an asynchronous operation. With async/await, a rejected Promise can be handled using try/catch.
 
 119. Does `try/catch` catch errors inside asynchronous callbacks?
 
@@ -1173,6 +1177,22 @@ Mouse movement
 125. Implement debounce from scratch.
 
 126. Implement throttle from scratch.
+
+```js
+
+function throttle(fn, delay) {
+  let lastCall = 0;
+
+  return function (...args) {
+    const now = Date.now();
+
+    if (now - lastCall >= delay) {
+      lastCall = now;
+      fn.apply(this, args);
+    }
+  };
+}
+```
 
 127. How would you cancel a pending debounce?
 

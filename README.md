@@ -863,7 +863,22 @@ function partial(fn, ...fixedArgs) {
 
 86. What is an IIFE?
 
+IIFE stands for Immediately Invoked Function Expression.
+
+It is a function that is defined and executed immediately.
+
+```js
+(function () {
+  console.log("Hello");
+})();
+
+```
+
 87. Why were IIFEs commonly used before ES modules?
+
+One common purpose is to create a private scope and avoid polluting the global scope.
+
+Before ES modules, IIFEs were commonly used to create a private scope, avoid global variable pollution and naming conflicts, and run initialization code immediately. ES modules later provided file-level scope and explicit imports/exports, so the need for IIFEs decreased significantly.
 
 ---
 

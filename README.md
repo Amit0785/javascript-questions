@@ -312,7 +312,12 @@ This is **very important** for a senior JavaScript interview.
 
 14. What is a closure?
 
+A closure is a function that remembers and retains access to variables from its outer lexical scope, even after the outer function has finished execution. Closures are commonly used for data privacy, state management, callbacks, and function factories
+Closure = Function + Its surrounding lexical environment.
+
 15. Why does a closure remember variables after the outer function has finished?
+
+Because JavaScript uses lexical scoping, and a closure keeps a reference to the variables it needs from its outer scope.
 
 16. Implement a counter using closure:
 

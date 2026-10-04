@@ -467,17 +467,29 @@ console.log("E");
 
 28. What happens if a microtask continuously creates another microtask?
 
+It can cause microtask starvation (also called starvation of the task queue).
+
+If every microtask schedules another microtask, the JavaScript runtime keeps processing microtasks and may never get a chance to process macrotasks/tasks such as timers or UI events.
+
 29. Can microtasks starve the event loop?
 
 30. Is JavaScript actually single-threaded?
 
 31. If JavaScript is single-threaded, how can Node.js handle thousands of requests?
 
+The key is that JavaScript execution is single-threaded, but Node.js itself is not limited to one thread.
+
+Node.js uses an event-driven, non-blocking I/O architecture. The JavaScript code runs on the main thread, while I/O operations are handled asynchronously by the operating system and, for certain operations, Node.js's libuv thread pool.
+
 ---
 
 # 5. `this` ⭐⭐⭐
 
 32. What is `this`?
+
+this is a special JavaScript keyword that refers to the object associated with the current function execution.
+
+Its value is not determined simply by where the function is written. It depends on how the function is called.
 
 33. How is `this` determined?
 

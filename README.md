@@ -731,17 +731,23 @@ const numbers = [10, 2, 5, 1];
 numbers.sort();
 ```
 
+The problem is that sort() converts elements to strings by default and sorts them lexicographically (dictionary-style), not numerically.
+
 70. Explain:
 
 ```js
 numbers.sort((a, b) => a - b);
 ```
 
+It is use for numeric sorting
+
 ---
 
 # 9. Reduce — Deep
 
-An architect-level interviewer may give you problems rather than ask "what is reduce?"
+What is reduce?
+
+reduce() is an array method used to reduce an array to a single value by repeatedly applying a function to each element.
 
 71. Calculate sum:
 

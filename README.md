@@ -368,6 +368,7 @@ Closures are practically used for data privacy, maintaining state, creating func
 Easy way to remember:
 Closures → Privacy + State + Callbacks + Factories + Debounce/Throttle
 
+```js
 function debounce(fn, delay) {
   let timer;
   return function (...args) {
@@ -377,6 +378,7 @@ function debounce(fn, delay) {
     }, delay);
   };
 }
+```
 
 20. Can closures cause memory leaks?
 
@@ -393,6 +395,12 @@ I prevent unnecessary memory retention by keeping closures short-lived, avoiding
 This is one of the most important areas for your Node.js transition.
 
 22. Explain the JavaScript event loop.
+
+The JavaScript event loop allows JavaScript to handle asynchronous operations while running on a single main thread. Synchronous code executes on the call stack. Async callbacks are handled by the runtime and placed into queues. Once the call stack is empty, the event loop processes queued work, with microtasks such as Promise callbacks generally being processed before the next task such as a timer callback.
+
+Easy way to remember:
+
+Call Stack → Async Runtime → Queue → Event Loop → Call Stack
 
 23. Explain:
 

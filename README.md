@@ -1001,6 +1001,8 @@ Very important for Node.
 
 104. What is a Promise?
 
+A Promise is a JavaScript object used to handle asynchronous operations. It represents a value that may be available now, later, or may fail. A Promise has three states: pending, fulfilled, and rejected. We commonly handle it using .then(), .catch(), .finally(), or async/await.
+
 105. Promise states?
 
 ```text
@@ -1030,7 +1032,26 @@ Promise.any()
 
 109. When would you use `Promise.allSettled()`?
 
+Use Promise.allSettled() when you need to run multiple asynchronous operations in parallel and want the result of every operation, even if some of them fail.
+
 110. Implement a Promise-based retry mechanism.
+
+```js
+async function retry(fn, retries = 3) {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      return await fn();
+    } catch (error) {
+      if (attempt === retries) {
+        throw error;
+      }
+
+      console.log(`Attempt ${attempt} failed. Retrying...`);
+    }
+  }
+}
+
+```
 
 111. What happens here?
 
@@ -1043,7 +1064,7 @@ console.log(test());
 ```
 
 Why isn't it `10`?
-
+Because an async function always returns a Promise, even when you return a normal value.
 ---
 
 # 15. Async/Await ⭐⭐⭐

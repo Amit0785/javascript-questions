@@ -548,13 +548,19 @@ obj.arrow();
 
 40. What does `this` point to inside a class?
 
+Inside a JavaScript class, this generally refers to the current instance of the class when a method is called on that instance
+
 ---
 
 # 6. Prototypes & Inheritance ⭐⭐⭐
 
 41. What is a prototype?
 
+A prototype is an object from which another object can inherit properties and methods. JavaScript uses prototype-based inheritance. When a property isn't found on an object, JavaScript searches its prototype and continues through the prototype chain until it finds the property or reaches null.
+
 42. What is the prototype chain?
+
+The prototype chain is the sequence of objects JavaScript searches when a property or method isn't found on the current object. It starts with the object itself and moves through its prototype, then the prototype's prototype, until it finds the property or reaches null. This is the foundation of JavaScript's inheritance model.
 
 43. Explain:
 
@@ -564,10 +570,14 @@ const obj = {};
 
 What is its prototype?
 
+Object.prototype
+
 44. What is:
 
 ```js
 Object.prototype
+
+Object.prototype is the top-level prototype object from which most ordinary JavaScript objects inherit properties and methods.
 ```
 
 45. Difference between:
@@ -575,6 +585,8 @@ Object.prototype
 ```js
 __proto__
 prototype
+
+prototype is a property of constructor functions/classes that defines the prototype inherited by their instances. __proto__ is an accessor on objects that exposes their internal prototype ([[Prototype]])
 ```
 
 46. Explain:
@@ -595,11 +607,23 @@ p.sayHello();
 
 47. Where does `sayHello()` actually live?
 
+sayHello() lives on Person.prototype, not directly on the p object.
+
 48. Why doesn't every object instance get a separate copy of `sayHello()`?
+
+Because JavaScript uses prototype-based inheritance.
+
+The method is stored once on Person.prototype and all instances share it.
 
 49. Explain inheritance using prototypes.
 
+Prototype inheritance means an object can access properties and methods from another object through the prototype chain.
+
+Prototype inheritance allows one object to inherit properties and methods from another object through the prototype chain. For example, Dog.prototype can inherit from Animal.prototype, allowing a Dog instance to use methods defined on Animal.prototype without creating separate copies of those methods for every object.
+
 50. Difference between ES6 classes and prototype-based inheritance.
+
+ES6 classes are syntactic sugar over JavaScript's prototype-based inheritance. With traditional prototypes, we manually create constructor functions and connect their .prototype objects. With classes, extends and super provide cleaner syntax, but internally JavaScript still uses the prototype chain for inheritance.
 
 ---
 

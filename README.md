@@ -815,7 +815,11 @@ console.log(groupedUsers);
 
 77. Function declaration vs function expression?
 
+A function declaration uses function name() {} and is fully hoisted, so it can be called before its declaration. A function expression assigns a function to a variable, such as const fn = function() {}, and it cannot be called before the variable is initialized. Arrow functions are also function expressions.
+
 78. Arrow function vs normal function?
+
+The main difference is that normal functions have their own this, while arrow functions inherit this lexically from their surrounding scope. Arrow functions also don't have their own arguments, cannot be used as constructors, and don't have a prototype. I commonly use arrow functions for callbacks where I want to preserve the surrounding this.
 
 79. What are first-class functions?
 
@@ -823,7 +827,19 @@ console.log(groupedUsers);
 
 81. What is a callback?
 
+A callback is a function passed to another function as an argument, which the receiving function invokes when needed. Callbacks are commonly used for array operations, event handlers, and asynchronous operations such as timers, API calls, and file operations.
+
 82. What is currying?
+
+Currying is a technique where a function that normally takes multiple arguments is transformed into a sequence of functions, each taking one argument at a time.
+
+
+```js
+const add = a => b => c => a + b + c;
+
+console.log(add(10)(20)(30)); 
+
+```
 
 83. Implement:
 

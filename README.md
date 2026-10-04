@@ -849,6 +849,16 @@ sum(1)(2)(3)
 
 84. What is partial application?
 
+Partial application is a technique where we pre-fill some arguments of a function and return a new function that accepts the remaining arguments. It is useful for creating specialized and reusable functions from a more general function.
+
+```js
+function partial(fn, ...fixedArgs) {
+  return (...remainingArgs) => {
+    return fn(...fixedArgs, ...remainingArgs);
+  };
+}
+```
+
 85. Currying vs partial application?
 
 86. What is an IIFE?

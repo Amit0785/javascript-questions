@@ -247,9 +247,11 @@ One nuance: **“creation phase” and “execution phase” are useful teaching
 # 2. Hoisting — Deep
 
 8. What is hoisting?
+
 Hoisting in JavaScript is the behavior where JavaScript processes declarations before executing the code in a scope.
 
 9. Are `let` and `const` hoisted?
+
 let and const are hoisted, but they are not initialized until execution reaches their declaration.
 They remain in the Temporal Dead Zone (TDZ) from the beginning of their scope until the declaration is executed.
 

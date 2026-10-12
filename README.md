@@ -967,6 +967,8 @@ false?
 
 100. What is type coercion?
 
+Type coercion is the conversion of one data type into another in JavaScript. Implicit coercion happens automatically, such as "5" - 2, which returns 3. Explicit coercion is performed manually using functions such as Number(), String(), or Boolean(). Understanding coercion is important to avoid unexpected results, and I generally prefer strict equality (===) for predictable comparisons.
+
 101. Explain:
 
 ```js
